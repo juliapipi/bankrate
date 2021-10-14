@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .rate-table {
+    width: 100%;
+  }
+  body {
+    width: auto;
+    margin: 0 auto;
+  }
+  .login {
+    display: none;
+  }
+  .rate-board {
+    width: auto;
+    margin: 5% 5%;
+  }
+  .form-check {
+    font-size: 14px;
+  }
+  .container {
+    margin: 5% 0;
+    padding: 20px;
+    display: grid;
+    row-gap: 20px;
+    grid-template-columns: 80px 1fr 1fr 1fr;
+    grid-template-rows: 1fr 30px 40px 50px;
+
+    justify-items: center;
+    align-items: center;
+  }
+  .form-select {
+    grid-column: 2 / 5;
+    grid-row: 1;
+    justify-self: stretch;
+  }
+  .el-0 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .el-1 {
+    grid-column: 2;
+    grid-row: 2/3;
+  }
+  .el-2 {
+    grid-column: 3;
+    grid-row: 2/3;
+  }
+  .el-3 {
+    grid-column: 4;
+    grid-row: 2/3;
+  }
+  .calender {
+    grid-column: 2 / span 3;
+    grid-row: 3/5;
+    align-self: start;
+  }
+  .search-btn {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: end;
+  }
+  .search {
+    margin-left: 5%;
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .rate-table {
+    width: 600px;
+    margin: 1% 10%;
+  }
+  .login-1 {
+    display: none;
+  }
+  .rate-check {
+    padding: 20px 50px;
+    width: 80%;
+    margin: 3% 10%;
+  }
+  .fa-clock {
+    margin-left: 10%;
+  }
+  .el-0 {
+    display: inline-block;
+  }
+  .calender {
+    margin-left: 13%;
+  }
+  .search-btn {
+    margin-left: 40%;
+    margin-top: 4%;
+  }
+  .rate-board {
+    width: 80%;
+    margin: 5% 10%;
+  }
+}
+.contain {
+  margin: 0 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(87, 151, 151);
+}
+.login {
+  position: absolute;
+  top: 5%;
+  left: 68%;
+  width: 30%;
+}
+.loglink {
+  font-size: 18px;
+  color: rgb(75, 151, 184);
+  background-color: rgb(255, 253, 253);
+  border: 1px solid none;
+  border-radius: 0.2em;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+.login-1 {
+  text-align: right;
+  margin: -4% 5%;
+}
+.logo {
+  position: relative;
+  top: 25%;
+  left: 35%;
+  text-transform: uppercase;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 40px;
+  text-decoration: none;
+}
+.dat,
+.fa-clock {
+  margin-top: 3%;
+  display: inline-block;
+  color: gray;
+  font-size: 14px;
+}
+td {
+  border: 2px solid rgb(235, 232, 232);
+  padding: 10px;
+}
+tbody tr:hover {
+  background: rgb(223, 222, 222);
+}
+thead {
+  height: 70px;
+  background-color: rgb(126, 188, 247);
+  color: white;
+  text-align: center;
+}
+.rate-check {
+  background-color: rgb(231, 231, 231);
+}
+.form-select,
+.form-check {
+  display: inline-block;
+}
+.form-select {
+  width: 40%;
+  margin-left: 6%;
+}
+.form-check {
+  margin-left: 2%;
+}
+.date {
+  border: 1px solid rgb(185, 185, 179);
+  border-radius: 0.25rem;
+  padding: 2px 6px;
+}
+.flag {
+  height: 30px;
+  width: 50px;
+  max-width: auto;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer="" src="./bankrate.js"></script>
+    <script defer="" language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="contain">
+        <a href="./index.html" class="logo">Bank</a>
+        <!-- <div class="logo">Bank</div> -->
+        <div class="input-group mb-3 login">
+
+            <input type="text" class="form-control" placeholder="身分證字號" aria-label="Username">
+
+            <input type="text" class="form-control" placeholder="密碼" aria-label="Server">
+            <button class="input-group-text">登入</button>
+        </div>
+        <div class="login-1">
+            <a href="./login.html" class="loglink">登入網銀</a>
+        </div>
+    </div>
+
+    <div class="rate-board">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true">即期匯率</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">歷史匯率走勢</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile2-tab" data-bs-toggle="tab" data-bs-target="#profile2" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false">匯率換算</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <i class="far fa-clock"></i>
+                <div class="dat"> </div>
+                <table class="rate-table">
+                    <thead>
+                        <tr>
+                            <td>幣別</td>
+                            <td>即期匯率</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-cur="USD"><img src="" class="flag"> 美元(USD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="CNY"><img src="" class="flag">
+                                人民幣(CNY)
+                            </td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="HKD"><img src="" class="flag"> 港幣(HKD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="JPY"><img src="" class="flag"> 日圓(JPY)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="EUR"><img src="" class="flag"> 歐元(EUR)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="AUD"><img src="" class="flag"> 澳幣(AUD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="CAD"><img src="" class="flag"> 加幣(CAD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="GBP"><img src="" class="flag"> 英鎊(GBP)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="ZAR"><img src="" class="flag"> 南非幣(ZAR)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="NZD"><img src="" class="flag"> 紐西蘭幣(NZD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="CHF"><img src="" class="flag"> 瑞士法郎(CHF)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="SEK"><img src="" class="flag"> 瑞典幣(SEK)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="SGD"><img src="" class="flag"> 新加坡幣(SGD)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="MXN"><img src="" class="flag"> 墨西哥披索(MXN)</td>
+                            <td class="rate"></td>
+                        </tr>
+                        <tr>
+                            <td data-cur="THB"><img src="" class="flag"> 泰銖(THB)</td>
+                            <td class="rate"></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="rate-check container">
+                    幣別：
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>請選擇</option>
+                        <option value="1">美元</option>
+                        <option value="2">人民幣</option>
+                        <option value="3">港幣</option>
+                        <option value="4">日圓</option>
+                        <option value="5">歐元</option>
+                        <option value="6">澳幣</option>
+                        <option value="7">加幣</option>
+                        <option value="8">英鎊</option>
+                        <option value="9">南非幣</option>
+                        <option value="10">紐西蘭幣</option>
+                        <option value="11">瑞士法郎</option>
+                        <option value="12">瑞典幣</option>
+                        <option value="13">新加坡幣</option>
+                        <option value="14">墨西哥披索</option>
+                        <option value="15">泰銖</option>
+
+                    </select>
+
+                    <br><br>
+                    <div class="el-0">查詢期間：</div>
+                    <div class="form-check el-1">
+                        <input class="form-check-input today" type="radio" name="flexRadioDefault"
+                            id="flexRadioDefault1" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            當天
+                        </label>
+                    </div>
+                    <div class="form-check el-2">
+                        <input class="form-check-input three-months" type="radio" name="flexRadioDefault"
+                            id="flexRadioDefault2">
+                        <label class="form-check-label " for="flexRadioDefault2">
+                            三個月
+                        </label>
+                    </div>
+                    <div class="form-check el-3">
+                        <input class="form-check-input six-months" type="radio" name="flexRadioDefault"
+                            id="flexRadioDefault2">
+                        <label class="form-check-label " for="flexRadioDefault2">
+                            六個月
+                        </label>
+                    </div>
+                    <br><br>
+                    <div class="calender">
+                        <input type="date" name="bday" value="2021-10-02" class="date from">
+                        ~
+                        <input type="date" name="bday" value="2021-10-02" class="date to">
+                        &nbsp;(查詢期限限最近三年內)
+                    </div>
+                    <button type="button" class="btn btn-info search-btn">查詢</button>
+                </div>
+                <div class="search hidden">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td colspan="2" class="searchCur">美元(USD)</td>
+                            </tr>
+                            <tr>
+                                <td>日期</td>
+                                <td>匯率</td>
+                            </tr>
+                        </thead>
+                        <tbody class="addTable ">
+
+                        </tbody>
+                    </table>
+                    <br>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item "><a class="page-link" href="#">上一頁</a></li>
+                            <ul class="next-Page pagination">
+                                <!-- <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li> -->
+                            </ul>
+                            <li class="page-item "><a class="page-link" href="#">下一頁</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
