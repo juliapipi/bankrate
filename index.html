@@ -76,7 +76,7 @@
                             <td class="rate"></td>
                         </tr>
                         <tr>
-                            <td data-cur="EUR"><img src="" class="flag"> 歐元(EUR)</td>
+                            <td data-cur="EUR"><img src="./flag/EU_flag.png" class="flag"> 歐元(EUR)</td>
                             <td class="rate"></td>
                         </tr>
                         <tr>
@@ -108,7 +108,7 @@
                             <td class="rate"></td>
                         </tr>
                         <tr>
-                            <td data-cur="SGD"><img src="" class="flag"> 新加坡幣(SGD)</td>
+                            <td data-cur="SGD"><img src="./flag/Flag_of_Singapore.png" class="flag"> 新加坡幣(SGD)</td>
                             <td class="rate"></td>
                         </tr>
                         <tr>
@@ -125,8 +125,9 @@
             </div>
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div class="rate-check container">
+
                     幣別：
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select check" aria-label="Default select example">
                         <option selected>請選擇</option>
                         <option value="1">美元</option>
                         <option value="2">人民幣</option>
@@ -196,16 +197,84 @@
                     <br>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
-                            <li class="page-item "><a class="page-link" href="#">上一頁</a></li>
-                            <ul class="next-Page pagination">
-                                <!-- <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li> -->
+                            <li class="page-item">
+                                <button class="page-link  previous" href="#" aria-label="Previous">
+                                    <span aria-hidden="false">&laquo;</span>
+                                </button>
+                            </li>
+                            <ul class="next-Page pagination ">
+                                <li class="page-item"><button class="page-link pageColor" href="#"
+                                        data-page="1">1</button></li>
                             </ul>
-                            <li class="page-item "><a class="page-link" href="#">下一頁</a></li>
+                            <li class="page-item ">
+                                <button class="page-link next" href="#" aria-label="Next">
+                                    <span aria-hidden="false">&raquo;</span>
+                                </button>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="tab-pane fade" id="profile2" role="tabpanel" aria-labelledby="profile-tab2"></div>
+            <div class="tab-pane fade " id="profile2" role="tabpanel" aria-labelledby="profile-tab2">
+                <div class="rate-change">
+                    <h5 class="ca">匯率換算</h5>
+                    <h2 class="calc-head">
+                        <i class="fas fa-calculator"></i>
+                    </h2>
+                    <br>
+                    <span class="going-from">想要將：</span>
+
+                    <select class="form-select change-from" aria-label="Default select example">
+                        <option selected>請選擇</option>
+                        <option value="1">美元</option>
+                        <option value="2">人民幣</option>
+                        <option value="3">港幣</option>
+                        <option value="4">日圓</option>
+                        <option value="5">歐元</option>
+                        <option value="6">澳幣</option>
+                        <option value="7">加幣</option>
+                        <option value="8">英鎊</option>
+                        <option value="9">南非幣</option>
+                        <option value="10">紐西蘭幣</option>
+                        <option value="11">瑞士法郎</option>
+                        <option value="12">瑞典幣</option>
+                        <option value="13">新加坡幣</option>
+                        <option value="14">墨西哥披索</option>
+                        <option value="15">泰銖</option>
+                    </select>
+
+                    <input type="text " class="form-control inputChange-from" id="formGroupExampleInput"
+                        placeholder="換算金額">
+                    <span class="referRate-from">參考匯率：</span>
+
+                    <div class="arrow">
+                        <i class="fas fa-arrows-alt-v"></i><i class="fas fa-arrows-alt-v"></i>
+                    </div>
+                    <span class="going-to">兌換為：</span>
+                    <select class="form-select change-to" aria-label="Default select example">
+                        <option selected>請選擇</option>
+                        <option value="1">美元</option>
+                        <option value="2">人民幣</option>
+                        <option value="3">港幣</option>
+                        <option value="4">日圓</option>
+                        <option value="5">歐元</option>
+                        <option value="6">澳幣</option>
+                        <option value="7">加幣</option>
+                        <option value="8">英鎊</option>
+                        <option value="9">南非幣</option>
+                        <option value="10">紐西蘭幣</option>
+                        <option value="11">瑞士法郎</option>
+                        <option value="12">瑞典幣</option>
+                        <option value="13">新加坡幣</option>
+                        <option value="14">墨西哥披索</option>
+                        <option value="15">泰銖</option>
+                    </select>
+                    <input type="text" class="form-control inputChange-to" id="formGroupExampleInput"
+                        placeholder="換算金額">
+                    <span class="referRate-to">參考匯率：</span>
+
+                </div>
+            </div>
         </div>
     </div>
 

@@ -7,13 +7,22 @@ const inputSixMonth = document.querySelector(".six-months");
 const inputToday = document.querySelector(".today");
 const fromDate = document.querySelector(".from");
 const toDate = document.querySelector(".to");
-const curOption = document.querySelector(".form-select");
+const curOption = document.querySelector(".check");
 const addTable = document.querySelector(".addTable");
 const searchBtn = document.querySelector(".search-btn");
 const search = document.querySelector(".search");
 const serCur = document.querySelector(".searchCur");
 const pageNum = document.querySelector(".pagination");
 const next = document.querySelector(".next-Page");
+// const prePage = document.querySelector(".previous");
+// const nextPage = document.querySelector(".next");
+const pageItem = document.querySelector(".page-item");
+const changeRateFrom = document.querySelector(".change-from");
+const changeRateTo = document.querySelector(".change-to");
+const inputChangeFrom = document.querySelector(".inputChange-from");
+const inputChangeTo = document.querySelector(".inputChange-to");
+const referFrom = document.querySelector(".referRate-from");
+const referTo = document.querySelector(".referRate-to");
 
 const countryInfo = {
   currency: [
@@ -49,12 +58,12 @@ const countryInfo = {
     "Sweden",
   ],
 };
+// Page1
 const today = new Date();
 
 const renderDate = function (num) {
   const cal = today.getMonth() + num;
   const da = today.getDate();
-
   let day = `${today.getFullYear()}-${cal < 9 ? 0 : ""}${cal}-${
     da < 10 ? 0 : ""
   }${da}`;
@@ -136,6 +145,7 @@ const renderFlag = async function () {
 };
 renderFlag();
 
+// Page2
 // DOM choose currency metch api
 let currentCur;
 let currentMonth = calender;
@@ -174,7 +184,7 @@ const periodRate = function () {
   ).then((r) => {
     entries = Object.entries(r.rates);
     addTable.innerHTML = "";
-    dataDevide(12);
+    dataDevide(1);
   });
 };
 
@@ -183,7 +193,7 @@ const dataDevide = function (nowPage) {
   const perpage = 12;
   const pageTotal = Math.ceil(entries.length / 12);
   next.innerHTML = "";
-  for (let i = 1; i <= pageTotal; i++) {
+  for (let i = 1; i <= 5; i++) {
     renderPages(i);
   }
   let currentPage = nowPage;
@@ -204,7 +214,7 @@ const dataDevide = function (nowPage) {
 
 pageNum.addEventListener("click", function (e) {
   addTable.innerHTML = "";
-  const getPage = e.target.getAttribute("data-page");
+  let getPage = e.target.getAttribute("data-page");
   dataDevide(getPage);
 });
 
@@ -227,4 +237,59 @@ const renderTable = function (da, rate) {
                     <td>${rate} </td>
                 </tr>`;
   addTable.insertAdjacentHTML("beforeend", html);
+};
+
+// Page 3
+const renderChangeCur = function (tar) {
+  if (tar.value === "請選擇") return;
+  const value = +tar.value;
+  const changedRateCur = countryInfo.currency[value - 1];
+  return changedRateCur;
+};
+let renderFrom;
+let renderTo;
+let multiInput;
+
+changeRateFrom.addEventListener("change", function (e) {
+  renderFrom = renderChangeCur(e.target);
+  if (!renderTo || !multiInput) return;
+  callRefer();
+});
+changeRateTo.addEventListener("change", function (e) {
+  renderTo = renderChangeCur(e.target);
+  if (!renderFrom || !multiInput) return;
+  callRefer();
+});
+inputChangeFrom.addEventListener("change", function (e) {
+  multiInput = e.target.value;
+  if (!renderFrom && !renderTo) return;
+  callRefer();
+});
+inputChangeFrom.addEventListener("keydown", function () {
+  inputChangeTo.value = 0;
+});
+const rateChange = function (from, to) {
+  getJson(`https://api.exchangerate.host/convert?from=${from}&to=${to}`).then(
+    (re) => {
+      const result = re.result;
+      const calc = result * multiInput;
+      inputChangeTo.value = calc.toFixed(2);
+    }
+  );
+};
+
+const reference = function (cur, fromto) {
+  getJson(`https://api.exchangerate.host/convert?from=${cur}&to=TWD`).then(
+    (re) => {
+      const result = re.result;
+      fromto === "from"
+        ? (referFrom.textContent = `參考匯率：${result}`)
+        : (referTo.textContent = `參考匯率：${result}`);
+    }
+  );
+};
+const callRefer = function () {
+  reference(renderFrom, "from");
+  reference(renderTo, "to");
+  rateChange(renderFrom, renderTo);
 };
