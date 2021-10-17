@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+.logo {
+  position: relative;
+  top: 25%;
+  left: 40%;
+  text-transform: uppercase;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 40px;
+  text-decoration: none;
+}
+.contain {
+  margin: 0 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(87, 151, 151);
+}
+.container-trans {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+}
+thead td {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+tfoot td,
+.history tbody td {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+tbody td,
+tfoot td {
+  background-color: #f5f5f5;
+  padding: 10px 10px;
+}
+.history thead td {
+  background-color: #778899;
+  padding: 10px 10px;
+}
+.history {
+  width: 50%;
+}
+.debt thead td {
+  background-color: #a6caf0;
+  padding: 10px 10px;
+}
+.debt {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.trans thead td {
+  background-color: khaki;
+  padding: 10px 10px;
+}
+.debt-send,
+.trans-send {
+  border: 1px solid rgb(230, 228, 228);
+  border-radius: 0.5rem;
+  padding: 2px 20px;
+  margin-left: 30%;
+}

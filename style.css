@@ -9,8 +9,8 @@
     width: auto;
     margin: 0 auto;
   }
-  .login {
-    display: none;
+  .logo {
+    left: 20%;
   }
   .rate-board {
     width: auto;
@@ -90,8 +90,8 @@
     width: 600px;
     margin: 1% 10%;
   }
-  .login-1 {
-    display: none;
+  .logo {
+    left: 40%;
   }
   .rate-check,
   .rate-change {
@@ -144,29 +144,23 @@
   height: 100px;
   background-color: rgb(87, 151, 151);
 }
-.login {
-  position: absolute;
-  top: 5%;
-  left: 68%;
-  width: 30%;
-}
 .loglink {
   font-size: 18px;
   color: rgb(75, 151, 184);
   background-color: rgb(255, 253, 253);
   border: 1px solid none;
   border-radius: 0.2em;
-  padding: 5px 5px;
+  padding: 10px 10px;
   text-decoration: none;
 }
 .login-1 {
   text-align: right;
-  margin: -4% 5%;
+  margin: -18px 5%;
 }
 .logo {
   position: relative;
   top: 25%;
-  left: 35%;
+
   text-transform: uppercase;
   color: aliceblue;
   font-weight: bold;
@@ -298,7 +292,6 @@ thead {
   grid-column: 2;
   grid-row: 4;
 }
-
 .referRate-from,
 .referRate-to {
   color: rgb(4, 99, 223);

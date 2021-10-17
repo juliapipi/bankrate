@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入網銀</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./logstyle.css">
+    <script defer='' src="bankacc.js"></script>
+</head>
+
+<body>
+    <div class="contain">
+        <a href="./index.html" class="logo">Bank</a>
+    </div>
+    <div class="login-container">
+        <h4 class="log-head">使用者登入</h4>
+        <br>
+        <div class="input-group mb-3 login-input">
+            <span class="id">身分證字號</span>&emsp;
+            <input type="password" class="form-control id-input" placeholder="" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+            <!-- <i class="fas fa-eye-slash"></i> -->
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                    class="far fa-eye"></i></button>
+        </div>
+        <div class="input-group mb-3 login-input">
+            <span class="user"> 使用者名稱</span>&emsp;
+            <input type="password" class="form-control user-input" placeholder="" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                    class="far fa-eye"></i></button>
+        </div>
+        <div class="input-group mb-3 login-input">
+            <span class="pass">使用者密碼</span>&emsp;
+            <input type="password" class="form-control input-pass" placeholder="" aria-label="Recipient's username"
+                aria-describedby="button-addon2">
+        </div>
+        <button class="login-btn">登入</button>
+    </div>
+</body>
+
+</html>
