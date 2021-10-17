@@ -17,9 +17,15 @@
 <body>
     <div class="contain">
         <a href="./index.html" class="logo">Bank</a>
+        <div class="login-1">
+            <a href="./login.html" class="loglink-acc">登出網銀</a>
+        </div>
     </div>
-    <div class="welcome">julia , 歡迎登入！</div>
-    <div class="balance">活期儲蓄存款餘額：</div>
+    <div class="log-info">
+        <h5 class="welcome">julia , 歡迎登入！</h5>
+        <span class="logout">帳戶登出計時：</span>
+    </div>
+
     <div class="container-trans">
         <table class="history">
             <thead>
@@ -29,9 +35,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>交易類別、金額、日期</td>
+                    <td class="hist-type in">轉入</td>
+                    <td class="hist-amount">金額</td>
+                    <td class="hist-date">日期</td>
                 </tr>
+                <tr>
+                    <td class="hist-type in">轉入</td>
+                    <td class="hist-amount">金額</td>
+                    <td class="hist-date">日期</td>
+                </tr>
+                <tr>
+                    <td class="hist-type out">轉出</td>
+                    <td class="hist-amount">金額</td>
+                    <td class="hist-date">日期</td>
+                </tr>
+                <tr>
+                    <td class="hist-type out">轉出</td>
+                    <td class="hist-amount">金額</td>
+                    <td class="hist-date">日期</td>
+                </tr>
+
             </tbody>
+            <tfoot class="balance">
+                <tr>
+                    <td colspan="3">活期儲蓄存款餘額：</td>
+                </tr>
+            </tfoot>
         </table>
         <div class="user-act">
             <table class="debt">
@@ -42,10 +71,11 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>金額</td>
-                        <td>是否符合資格</td>
+                        <td><input type="text" class="form-control input-pass" placeholder="貸款金額"
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                        </td>
+                        <td>！是否符合資格!請輸入正確格式</td>
                     </tr>
-
                 </tbody>
                 <tfoot>
                     <tr>
@@ -61,13 +91,15 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="2">轉入帳號</td>
+                        <td><input type="text" class="form-control input-pass" placeholder="轉入帳號"
+                                aria-label="Recipient's username" aria-describedby="button-addon2"></td>
+                        <td>！無效帳號</td>
                     </tr>
                     <tr>
-                        <td>金額</td>
-                        <td>帳戶餘額是否不足</td>
+                        <td><input type="text" class="form-control input-pass" placeholder="轉帳金額"
+                                aria-label="Recipient's username" aria-describedby="button-addon2"></td>
+                        <td>！帳戶餘額不足!請輸入正確格式</td>
                     </tr>
-
                 </tbody>
                 <tfoot>
                     <tr>
@@ -76,9 +108,7 @@
                 </tfoot>
             </table>
         </div>
-
     </div>
-
 </body>
 
 </html>

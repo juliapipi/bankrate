@@ -25,23 +25,32 @@
             <span class="id">身分證字號</span>&emsp;
             <input type="password" class="form-control id-input" placeholder="" aria-label="Recipient's username"
                 aria-describedby="button-addon2">
-            <!-- <i class="fas fa-eye-slash"></i> -->
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                    class="far fa-eye"></i></button>
+
+            <button class="btn btn-outline-secondary eye-op " type="button" id="button-addon2">
+                <i class="far fa-eye"></i>
+            </button>
+            <button class="btn btn-outline-secondary eye-cl hidden" type="button" id="button-addon2">
+                <i class=" fas fa-eye-slash"></i>
+            </button>
+
         </div>
         <div class="input-group mb-3 login-input">
             <span class="user"> 使用者名稱</span>&emsp;
             <input type="password" class="form-control user-input" placeholder="" aria-label="Recipient's username"
                 aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                    class="far fa-eye"></i></button>
+            <button class="btn btn-outline-secondary eye-open" type="button" id="button-addon2">
+                <i class="far fa-eye"></i>
+            </button>
+            <button class="btn btn-outline-secondary eye-close hidden" type="button" id="button-addon2">
+                <i class="fas fa-eye-slash"></i>
+            </button>
         </div>
         <div class="input-group mb-3 login-input">
             <span class="pass">使用者密碼</span>&emsp;
             <input type="password" class="form-control input-pass" placeholder="" aria-label="Recipient's username"
                 aria-describedby="button-addon2">
         </div>
-        <button class="login-btn">登入</button>
+        <a class="login-btn" href="">登入</a>
     </div>
 </body>
 

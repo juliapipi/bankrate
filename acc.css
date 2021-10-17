@@ -1,15 +1,64 @@
 * {
   box-sizing: border-box;
 }
+@media screen and (max-width: 768px) {
+  .logo {
+    left: 20%;
+  }
+  .container-trans {
+    margin: 5%;
+  }
+  .history {
+    margin-bottom: 5%;
+  }
+  .log-info {
+    margin-top: 5%;
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 780px) {
+  .logo {
+    left: 40%;
+  }
+  .container-trans {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+  }
+  .history {
+    width: 50%;
+  }
+  .welcome {
+    display: inline-block;
+  }
+  .log-info {
+    margin-top: 2%;
+    margin-left: 8%;
+  }
+}
+
 .logo {
   position: relative;
   top: 25%;
-  left: 40%;
   text-transform: uppercase;
   color: aliceblue;
   font-weight: bold;
   font-size: 40px;
   text-decoration: none;
+}
+.loglink-acc {
+  font-size: 18px;
+  color: rgb(75, 151, 184);
+  background-color: rgb(255, 253, 253);
+  border: 1px solid none;
+  border-radius: 0.2em;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+.login-1 {
+  text-align: right;
+  margin: -18px 5%;
 }
 .contain {
   margin: 0 0;
@@ -17,11 +66,8 @@
   height: 100px;
   background-color: rgb(87, 151, 151);
 }
-.container-trans {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10%;
+.log-info {
+  color: #778899;
 }
 thead td {
   border-top-left-radius: 1rem;
@@ -30,9 +76,9 @@ thead td {
   color: white;
   font-size: 20px;
   font-weight: bold;
+  padding: 10px 10px;
 }
-tfoot td,
-.history tbody td {
+tfoot td {
   border-bottom-left-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
@@ -43,22 +89,34 @@ tfoot td {
 }
 .history thead td {
   background-color: #778899;
-  padding: 10px 10px;
 }
 .history {
-  width: 50%;
+  border-collapse: separate;
+  border-spacing: 0px 0.5em;
+}
+.in,
+.out {
+  width: 10%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+.in {
+  background-color: #7ab894;
+}
+.out {
+  background-color: #ee4f4f;
 }
 .debt thead td {
   background-color: #a6caf0;
-  padding: 10px 10px;
 }
 .debt {
   margin-bottom: 20px;
-  width: 100%;
 }
 .trans thead td {
   background-color: khaki;
-  padding: 10px 10px;
 }
 .debt-send,
 .trans-send {
@@ -66,4 +124,7 @@ tfoot td {
   border-radius: 0.5rem;
   padding: 2px 20px;
   margin-left: 30%;
+}
+.hidden {
+  display: none;
 }

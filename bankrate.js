@@ -193,7 +193,7 @@ const dataDevide = function (nowPage) {
   const perpage = 12;
   const pageTotal = Math.ceil(entries.length / 12);
   next.innerHTML = "";
-  for (let i = 1; i <= 5; i++) {
+  for (let i = 1; i <= pageTotal; i++) {
     renderPages(i);
   }
   let currentPage = nowPage;
@@ -211,13 +211,11 @@ const dataDevide = function (nowPage) {
     }
   });
 };
-
 pageNum.addEventListener("click", function (e) {
   addTable.innerHTML = "";
   let getPage = e.target.getAttribute("data-page");
   dataDevide(getPage);
 });
-
 // btn search is clicked,show the result
 searchBtn.addEventListener("click", function () {
   new Promise(function (resolve, reject) {
@@ -227,7 +225,7 @@ searchBtn.addEventListener("click", function () {
 });
 
 const renderPages = function (pa) {
-  const page = `<li class="page-item"><a class="page-link" href="#" data-page="${pa}">${pa}</a></li>`;
+  const page = `<li class="page-item"><a class="page-link" data-page="${pa}">${pa}</a></li>`;
   next.insertAdjacentHTML("beforeend", page);
 };
 

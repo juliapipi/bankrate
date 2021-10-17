@@ -1,12 +1,30 @@
 * {
   box-sizing: border-box;
 }
+@media screen and (max-width: 768px) {
+  .login-container {
+    width: 80%;
+    margin-left: 10%;
+    padding: 10%;
+    padding-left: 0;
+  }
+  .login-input {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 780px) {
+  .login-container {
+    width: 40%;
+    margin-left: 25%;
+    padding: 3% 2%;
+  }
+  .login-input {
+    width: 80%;
+  }
+}
 .login-container {
   text-align: center;
-  margin-left: 25%;
   margin-top: 5%;
-  padding: 2% 3%;
-  width: 40%;
   background-color: rgb(226, 240, 238);
   border-radius: 0.5rem;
   color: rgb(108, 126, 123);
@@ -16,17 +34,18 @@
 }
 .login-input {
   align-items: center;
-  flex-grow: 0;
-  width: 70%;
-  margin-left: 10%;
+  flex-grow: 1;
+  margin-left: 8%;
   font-size: 17px;
 }
 .login-btn {
   border: none;
   border-radius: 0.3rem;
   padding: 8px 20px;
-  margin-top: 5%;
   background-color: rgb(90, 151, 151);
   color: white;
   font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 3%;
 }

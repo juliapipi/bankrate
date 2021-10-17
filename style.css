@@ -68,7 +68,7 @@
     margin-top: 30px;
     padding-top: 15px;
     padding-left: 5px;
-    grid-template-columns: 20% 40% 30%;
+    grid-template-columns: 15% 40% 35%;
     grid-template-rows: 60px auto 62px 60px;
   }
   .referRate-from {
@@ -83,6 +83,14 @@
   }
   .arrow {
     align-self: end;
+  }
+  .fa-calculator {
+    padding: 10px 12px;
+    font-size: 25px;
+  }
+  .calc-head {
+    height: 45px;
+    width: 45px;
   }
 }
 @media screen and (min-width: 780px) {
@@ -137,6 +145,14 @@
     margin-top: 8px;
     align-self: start;
   }
+  .fa-calculator {
+    padding: 10px 12px;
+    font-size: 40px;
+  }
+  .calc-head {
+    height: 60px;
+    width: 60px;
+  }
 }
 .contain {
   margin: 0 0;
@@ -160,7 +176,6 @@
 .logo {
   position: relative;
   top: 25%;
-
   text-transform: uppercase;
   color: aliceblue;
   font-weight: bold;
@@ -212,12 +227,12 @@ thead {
   width: 50px;
   max-width: auto;
 }
-
 .hidden {
   display: none;
 }
 .pageColor {
-  color: cadetblue;
+  background-color: rgb(247, 197, 88);
+  /* color: black; */
 }
 .rate-change {
   background-color: rgb(206, 237, 250);
@@ -229,8 +244,6 @@ thead {
 }
 .calc-head {
   background-color: rgb(250, 122, 75);
-  height: 60px;
-  width: 60px;
   border-radius: 5rem;
   border: 1px solid none;
   grid-column: 1;
@@ -239,8 +252,6 @@ thead {
 }
 .fa-calculator {
   color: aliceblue;
-  padding: 15px 16px;
-  font-size: 30px;
 }
 .ca {
   font-weight: bold;
