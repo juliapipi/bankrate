@@ -149,6 +149,7 @@ renderFlag();
 // DOM choose currency metch api
 let currentCur;
 let currentMonth = calender;
+let toMonth = calender;
 let entries;
 let firstClick = 0;
 
@@ -162,25 +163,36 @@ curOption.addEventListener("change", function (e) {
 });
 
 // click 3 months, change date on calender, click today , change back
+const inputClick = function (monthAgo) {
+  currentMonth = monthAgo;
+  fromDate.value = monthAgo;
+  toDate.value = toMonth = calender;
+};
+
 inputThreeMonth.addEventListener("click", function () {
-  currentMonth = threeMonthAgo;
+  inputClick(threeMonthAgo);
   firstClick === 2 ? periodRate() : (firstClick += 1);
-  fromDate.setAttribute("value", threeMonthAgo);
 });
 inputSixMonth.addEventListener("click", function () {
-  currentMonth = sixMonthAgo;
+  inputClick(sixMonthAgo);
   firstClick === 2 ? periodRate() : (firstClick += 1);
-  fromDate.setAttribute("value", sixMonthAgo);
 });
 inputToday.addEventListener("click", function () {
-  currentMonth = calender;
+  inputClick(calender);
   periodRate();
-  fromDate.setAttribute("value", calender);
+});
+fromDate.addEventListener("change", function (e) {
+  currentMonth = e.target.value;
+  periodRate();
+});
+toDate.addEventListener("change", function (e) {
+  toMonth = e.target.value;
+  periodRate();
 });
 
 const periodRate = function () {
   getJson(
-    `https://api.exchangerate.host/timeseries?start_date=${currentMonth}&end_date=${calender}&symbols=TWD&base=${currentCur}`
+    `https://api.exchangerate.host/timeseries?start_date=${currentMonth}&end_date=${toMonth}&symbols=TWD&base=${currentCur}`
   ).then((r) => {
     entries = Object.entries(r.rates);
     addTable.innerHTML = "";
